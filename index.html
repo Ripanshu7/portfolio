@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ripanshu Kumar | Software Developer Portfolio</title>
+    <title>Ripanshu Kumar | Software Developer & B.Tech CSE Graduate</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -12,174 +12,411 @@
             theme: {
                 extend: {
                     colors: {
-                        brand: { 500: '#6366f1', 600: '#4f46e5' }
+                        dark: {
+                            950: '#030712',
+                            900: '#0b0f19',
+                            800: '#111827',
+                            700: '#1f2937',
+                        }
                     }
                 }
             }
         }
     </script>
+    <!-- Font Poppins & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect {
+            box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+        }
+        .glow-text {
+            text-shadow: 0 0 20px rgba(129, 140, 248, 0.4);
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white">
+<body class="bg-dark-950 text-slate-100 selection:bg-indigo-500 selection:text-white">
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <a href="#" class="text-xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">Ripanshu.dev</a>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-indigo-400 transition">About</a>
-                <a href="#projects" class="hover:text-indigo-400 transition">Projects</a>
-                <a href="#experience" class="hover:text-indigo-400 transition">Experience</a>
-                <a href="#contact" class="hover:text-indigo-400 transition">Contact</a>
-                <a href="resume.pdf" download="Ripanshu_Kumar_Resume.pdf" class="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-2 rounded-lg transition shadow-lg shadow-indigo-500/20">
-                    <i class="fas fa-file-arrow-down mr-2"></i>Resume
-                </a>
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-indigo-500/30">
+                        RK
+                    </div>
+                    <span class="font-bold text-xl tracking-wide bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent">
+                        Ripanshu Kumar
+                    </span>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">About</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Skills</a>
+                    <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Projects</a>
+                    <a href="#experience" class="text-sm font-medium text-slate-300 hover:text-indigo-400 transition-colors">Experience</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-sm transition-all shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 hover:-translate-y-0.5">
+                        Let's Talk
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white p-2 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-slate-800 px-4 pt-3 pb-5 space-y-3">
+            <a href="#about" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium mobile-link">About</a>
+            <a href="#skills" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium mobile-link">Skills</a>
+            <a href="#projects" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium mobile-link">Projects</a>
+            <a href="#experience" class="block py-2 text-slate-300 hover:text-indigo-400 font-medium mobile-link">Experience</a>
+            <a href="#contact" class="block text-center py-3 rounded-xl bg-indigo-600 text-white font-medium mobile-link shadow-lg shadow-indigo-600/30">Let's Talk</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider text-indigo-300 uppercase bg-indigo-500/10 rounded-full border border-indigo-500/30">
-                <i class="fas fa-graduation-cap text-indigo-400"></i> B.Tech Computer Science Graduate (8.35 CGPA)
-            </span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6">
-                Hi, I'm <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent">Ripanshu Kumar</span>
+    <section class="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
+        <!-- Background Glow Blobs -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-80 h-80 bg-violet-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-indigo-500/30 text-indigo-300 text-xs sm:text-sm font-semibold mb-6 shadow-inner animate-pulse">
+                <i class="fa-solid fa-graduation-cap"></i> B.Tech Computer Science Graduate (8.35 CGPA)
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
+                Hi, I'm <span class="bg-gradient-to-r from-indigo-400 via-violet-400 to-purple-400 bg-clip-text text-transparent glow-text">Ripanshu Kumar</span>
             </h1>
-            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Software Developer & B.Tech CSE Graduate specializing in Full Stack Web Development, Data Science, and Machine Learning.
+
+            <p class="text-xl sm:text-2xl font-medium text-slate-300 mb-8 max-w-3xl mx-auto">
+                Software Developer & B.Tech CSE Graduate specializing in Full-Stack Web Development, Data Science, and Machine Learning.
             </p>
-            
-            <!-- Action Buttons (Resume Download & Projects) -->
+
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                <a href="#projects" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:bg-slate-800 hover:text-white font-medium transition">
+                <a href="#projects" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold transition-all shadow-xl shadow-indigo-600/30 flex items-center justify-center gap-2 hover:-translate-y-1">
                     <span>Explore Projects</span>
-                    <i class="fas fa-arrow-right ml-2 text-indigo-400"></i>
+                    <i class="fa-solid fa-arrow-down"></i>
                 </a>
-                
-                <!-- RESUME DOWNLOAD LINK -->
-                <a href="resume.pdf" download="Ripanshu_Kumar_Resume.pdf" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition shadow-lg shadow-indigo-600/30">
-                    <span class="mr-2"><i class="fas fa-download text-white"></i></span>
+                <a href="resume.pdf" download="Ripanshu_Kumar_Resume.pdf" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold transition-all border border-slate-700 flex items-center justify-center gap-2 hover:-translate-y-1">
+                    <i class="fa-solid fa-download text-indigo-400"></i>
                     <span>Download Resume</span>
                 </a>
             </div>
-            
+
             <!-- Social Links (Updated with your exact links) -->
-            <div class="flex justify-center space-x-5 text-slate-400 text-xl">
-                <!-- GitHub -->
-                <a href="https://github.com/Ripanshu7" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/40 transition">
-                    <i class="fab fa-github"></i>
+            <div class="flex items-center justify-center space-x-5 text-slate-400">
+                <a href="https://github.com/Ripanshu7" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl glass-card flex items-center justify-center hover:text-white hover:bg-indigo-600/20 hover:border-indigo-500 transition-all text-xl">
+                    <i class="fa-brands fa-github"></i>
                 </a>
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/ripanshu-kumar-97a6652b8?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/40 transition">
-                    <i class="fab fa-linkedin-in"></i>
+                <a href="https://www.linkedin.com/in/ripanshu-kumar-97a6652b8?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl glass-card flex items-center justify-center hover:text-white hover:bg-indigo-600/20 hover:border-indigo-500 transition-all text-xl">
+                    <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <!-- Email -->
-                <a href="mailto:ripanshu70793@gmail.com" class="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center hover:text-indigo-400 hover:border-indigo-500/40 transition">
-                    <i class="fas fa-envelope"></i>
+                <a href="mailto:ripanshu70793@gmail.com" class="w-12 h-12 rounded-xl glass-card flex items-center justify-center hover:text-white hover:bg-indigo-600/20 hover:border-indigo-500 transition-all text-xl">
+                    <i class="fa-solid fa-envelope"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- About & Skills Section -->
-    <section id="about" class="py-20 border-t border-slate-900 bg-slate-950/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center">About & Technical Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
+    <!-- About & Education Section -->
+    <section id="about" class="py-24 relative bg-dark-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">About Me & Education</h2>
+                <div class="w-20 h-1.5 bg-indigo-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Bio Description -->
+                <div class="glass-card p-8 sm:p-10 rounded-2xl glow-effect">
+                    <h3 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                        <i class="fa-solid fa-code text-indigo-400"></i> Driven by Code & Innovation
+                    </h3>
                     <p class="text-slate-300 leading-relaxed mb-6">
-                        I am a Computer Science Engineering graduate from Rabindranath Tagore University (RNTU), Bhopal, with an 8.35 CGPA. I specialize in software development, building clean backend APIs using Python Flask, and creating dynamic frontend experiences with React.js.
+                        I am a passionate Computer Science Engineering graduate from RNTU Bhopal with a strong academic record (8.35 CGPA). My expertise spans across building robust full-stack applications with React, Python Flask, and MySQL, alongside applying machine learning algorithms to solve real-world analytical problems.
                     </p>
                     <p class="text-slate-300 leading-relaxed">
-                        Alongside technical engineering, I serve as an NSS Volunteer Coordinator, combining strong organizational leadership and teamwork with modern technical problem-solving.
+                        Whether it's managing community volunteering platforms, developing smart library applications, or predicting student academic performance using data science, I am dedicated to writing clean, efficient, and scalable software solutions.
                     </p>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="p-5 bg-slate-900 border border-slate-800 rounded-xl">
-                        <h3 class="font-semibold text-indigo-400 mb-2">Core & Languages</h3>
-                        <p class="text-sm text-slate-400">Python, C, SQL (MySQL), JavaScript</p>
+
+                <!-- Education Card -->
+                <div class="glass-card p-8 sm:p-10 rounded-2xl border border-indigo-500/20">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 text-2xl flex-shrink-0">
+                            <i class="fa-solid fa-university"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold mb-2">
+                                Bachelor of Technology
+                            </span>
+                            <h4 class="text-xl font-bold text-white">Computer Science & Engineering</h4>
+                            <p class="text-slate-400 text-sm mt-1">Rabindranath Tagore University (RNTU), Bhopal</p>
+                            <div class="mt-4 flex items-center gap-6">
+                                <div>
+                                    <span class="text-xs text-slate-400 block">CGPA</span>
+                                    <span class="text-lg font-bold text-indigo-300">8.35 / 10</span>
+                                </div>
+                                <div>
+                                    <span class="text-xs text-slate-400 block">Status</span>
+                                    <span class="text-lg font-bold text-emerald-400">Graduate</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="p-5 bg-slate-900 border border-slate-800 rounded-xl">
-                        <h3 class="font-semibold text-indigo-400 mb-2">Frontend</h3>
-                        <p class="text-sm text-slate-400">React.js, HTML5, CSS3, Tailwind CSS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Technical Skills</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Core programming languages, frameworks, and data science toolkits I work with.</p>
+                <div class="w-20 h-1.5 bg-indigo-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <!-- Skill 1 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:border-indigo-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-indigo-600/10 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-python"></i>
                     </div>
-                    <div class="p-5 bg-slate-900 border border-slate-800 rounded-xl">
-                        <h3 class="font-semibold text-indigo-400 mb-2">Backend & Database</h3>
-                        <p class="text-sm text-slate-400">Python Flask, REST APIs, MySQL Workbench</p>
+                    <h3 class="font-bold text-white text-lg">Python</h3>
+                    <p class="text-xs text-slate-400 mt-1">Core & Scripting</p>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:border-indigo-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-indigo-600/10 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-c"></i>
                     </div>
-                    <div class="p-5 bg-slate-900 border border-slate-800 rounded-xl">
-                        <h3 class="font-semibold text-indigo-400 mb-2">Data Science & Tools</h3>
-                        <p class="text-sm text-slate-400">NumPy, Pandas, Scikit-learn, VS Code</p>
+                    <h3 class="font-bold text-white text-lg">C Language</h3>
+                    <p class="text-xs text-slate-400 mt-1">Data Structures & Logic</p>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:border-indigo-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-indigo-600/10 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-database"></i>
                     </div>
+                    <h3 class="font-bold text-white text-lg">SQL & MySQL</h3>
+                    <p class="text-xs text-slate-400 mt-1">Database Management</p>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:border-indigo-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-indigo-600/10 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-brands fa-react"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg">React.js</h3>
+                    <p class="text-xs text-slate-400 mt-1">Frontend Development</p>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:border-indigo-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-indigo-600/10 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-square-root-variable"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg">NumPy</h3>
+                    <p class="text-xs text-slate-400 mt-1">Numerical Computing</p>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:border-indigo-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-indigo-600/10 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-table"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg">Pandas</h3>
+                    <p class="text-xs text-slate-400 mt-1">Data Analysis</p>
+                </div>
+
+                <!-- Skill 7 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:border-indigo-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-indigo-600/10 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg">Matplotlib</h3>
+                    <p class="text-xs text-slate-400 mt-1">Data Visualization</p>
+                </div>
+
+                <!-- Skill 8 -->
+                <div class="glass-card p-6 rounded-2xl text-center hover:border-indigo-500/60 transition-all hover:-translate-y-1 group">
+                    <div class="w-14 h-14 mx-auto mb-4 rounded-xl bg-indigo-600/10 flex items-center justify-center text-indigo-400 text-2xl group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="font-bold text-white text-lg">Scikit-learn</h3>
+                    <p class="text-xs text-slate-400 mt-1">Machine Learning</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 border-t border-slate-900">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold mb-12 text-center">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section id="projects" class="py-24 relative bg-dark-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Featured Projects</h2>
+                <p class="text-slate-400 max-w-xl mx-auto">Explore my key software engineering and data science applications.</p>
+                <div class="w-20 h-1.5 bg-indigo-500 mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition">
-                    <div>
-                        <div class="text-indigo-400 text-sm font-semibold mb-2">Machine Learning / AI</div>
-                        <h3 class="text-xl font-bold mb-3">Student Performance Prediction System</h3>
-                        <p class="text-slate-400 text-sm mb-6">Major final-year engineering project built using Scikit-learn, Pandas, and Python to forecast student academic metrics.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 bg-slate-800 text-xs rounded-md text-slate-300">Python</span>
-                        <span class="px-2.5 py-1 bg-slate-800 text-xs rounded-md text-slate-300">Scikit-learn</span>
-                        <span class="px-2.5 py-1 bg-slate-800 text-xs rounded-md text-slate-300">Pandas</span>
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between hover:border-indigo-500/60 transition-all hover:-translate-y-2 group">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-chart-pie"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-violet-500/10 text-violet-300 text-xs font-semibold">Data Science</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                            AI-based Student Performance Prediction System
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            A machine learning model built to predict student academic performance and success rates based on historical engagement, attendance, and assessment metrics.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Python</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Scikit-learn</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Pandas</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Matplotlib</span>
+                        </div>
                     </div>
                 </div>
+
                 <!-- Project 2 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition">
-                    <div>
-                        <div class="text-indigo-400 text-sm font-semibold mb-2">Full-Stack Web App</div>
-                        <h3 class="text-xl font-bold mb-3">NSS Volunteer Management System</h3>
-                        <p class="text-slate-400 text-sm mb-6">Full-stack web platform featuring attendance tracking, secure OTP authentication, and management dashboards.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 bg-slate-800 text-xs rounded-md text-slate-300">React.js</span>
-                        <span class="px-2.5 py-1 bg-slate-800 text-xs rounded-md text-slate-300">Python Flask</span>
-                        <span class="px-2.5 py-1 bg-slate-800 text-xs rounded-md text-slate-300">MySQL</span>
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between hover:border-indigo-500/60 transition-all hover:-translate-y-2 group">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-users-rectangle"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 text-xs font-semibold">Full-Stack</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                            NSS Volunteer Management System
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Full-stack web application for managing NSS volunteer activities, attendance tracking, secure OTP authentication, and administrative dashboards.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">React.js</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Python Flask</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">MySQL</span>
+                        </div>
                     </div>
                 </div>
+
                 <!-- Project 3 -->
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition">
-                    <div>
-                        <div class="text-indigo-400 text-sm font-semibold mb-2">Web Application</div>
-                        <h3 class="text-xl font-bold mb-3">Morya Library Management App</h3>
-                        <p class="text-slate-400 text-sm mb-6">Private reading library management application designed to track student attendance and monthly fee payments.</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 bg-slate-800 text-xs rounded-md text-slate-300">React (Vite)</span>
-                        <span class="px-2.5 py-1 bg-slate-800 text-xs rounded-md text-slate-300">Python</span>
-                        <span class="px-2.5 py-1 bg-slate-800 text-xs rounded-md text-slate-300">MySQL</span>
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col justify-between hover:border-indigo-500/60 transition-all hover:-translate-y-2 group">
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-book-open-reader"></i>
+                            </div>
+                            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 text-xs font-semibold">Web App</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">
+                            Morya Library Management Application
+                        </h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Private reading library management system designed to track student attendance and handle monthly subscription fee payment records.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">React (Vite)</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">Python</span>
+                            <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300 text-xs font-medium">MySQL</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience / NSS Section -->
-    <section id="experience" class="py-20 border-t border-slate-900 bg-slate-950/50">
+    <!-- Experience & Leadership Section -->
+    <section id="experience" class="py-24 relative">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold mb-6">Leadership & Community Service</h2>
-            <p class="text-slate-300 leading-relaxed mb-6">
-                Serving as a student coordinator and volunteer leader for the National Service Scheme (NSS) at Rabindranath Tagore University, organizing cleanliness drives, blood donation camps, and community awareness programs.
-            </p>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Leadership & Community Service</h2>
+            <p class="text-slate-400 mb-12">Balancing technical software engineering with active civic leadership and teamwork.</p>
+            <div class="w-20 h-1.5 bg-indigo-500 mx-auto rounded-full mb-12"></div>
+
+            <div class="glass-card p-8 sm:p-10 rounded-2xl text-left border border-indigo-500/20">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center text-xl flex-shrink-0">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white">NSS Volunteer Coordinator & Leader</h3>
+                        <p class="text-indigo-400 text-sm">Rabindranath Tagore University (RNTU), Bhopal</p>
+                    </div>
+                </div>
+                <p class="text-slate-300 leading-relaxed">
+                    Serving as a student coordinator and volunteer leader for the National Service Scheme (NSS), organizing student registrations, community outreach awareness campaigns, blood donation drives, and managing large-scale campus events.
+                </p>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="py-12 border-t border-slate-900 text-center text-slate-500 text-sm">
-        <p>© 2026 Ripanshu Kumar. Built with Passion & Tailwind CSS.</p>
+    <!-- Contact & Footer Section -->
+    <footer id="contact" class="py-16 border-t border-slate-800/80 bg-dark-900/80 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Let's Connect & Build Together</h2>
+            <p class="text-slate-400 mb-8 max-w-lg mx-auto">I'm actively looking for software development and data science opportunities. Feel free to reach out!</p>
+            
+            <div class="flex items-center justify-center space-x-5 text-slate-400 mb-10">
+                <a href="https://github.com/Ripanshu7" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl glass-card flex items-center justify-center hover:text-white hover:bg-indigo-600/20 hover:border-indigo-500 transition-all text-xl">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ripanshu-kumar-97a6652b8?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-xl glass-card flex items-center justify-center hover:text-white hover:bg-indigo-600/20 hover:border-indigo-500 transition-all text-xl">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:ripanshu70793@gmail.com" class="w-12 h-12 rounded-xl glass-card flex items-center justify-center hover:text-white hover:bg-indigo-600/20 hover:border-indigo-500 transition-all text-xl">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+
+            <p class="text-slate-500 text-sm">© 2026 Ripanshu Kumar. All rights reserved. Built with Passion & Tailwind CSS.</p>
+        </div>
     </footer>
 
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
